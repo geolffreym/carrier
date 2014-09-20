@@ -56,10 +56,4 @@ target_link_libraries(carrier json-c)
 target_link_libraries(carrier git2)
 target_link_libraries(carrier -lpthread)
 
-<<<<<<< HEAD
 install(TARGETS carrier EXPORT carrier DESTINATION bin)
-
-=======
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
-
-

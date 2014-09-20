@@ -28,7 +28,6 @@ public:
         {"svn", 2}
     };
 
-<<<<<<< HEAD
     PackGestor (Processor &process) : process(process) {
         this->process = process;
     }
@@ -40,16 +39,6 @@ private:
     Processor process;
     void gitManage(string destiny, const vector<Box> &url);
     //void composerManage(string compose);
-=======
-    ~PackGestor (){delete this;}
-
-    void build(Processor &processor);
-
-
-private:
-    void gitManage(string destiny, const vector<Box> &url);
-    void composerManage(string compose);
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
     void svnManage(string destiny, const vector<Box> &url);
 };
 

@@ -24,13 +24,8 @@ string reQuery (Service service) {
 
     //Console::warning ("|> Your home directory is: " + base);
     Console::warning ("\n|> Write the system base directory:\n|>> ");
-<<<<<<< HEAD
-    //cin >> dir;
-    dir = "/home/gmena/Documentos/_b_PHP";
-=======
     cin >> dir;
     //dir = "/home/gmena/Documentos/_b_PHP";
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
     dir = dir + "/";
     //string BASE_DIR = GetPrivateProfileString();
     if (!file.isDir (dir) || !file.isDir (dir + "app")) {

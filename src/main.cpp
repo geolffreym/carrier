@@ -9,7 +9,6 @@
 
 using namespace std;
 
-<<<<<<< HEAD
 int main () {
 
     Service service;
@@ -28,28 +27,5 @@ int main () {
 
     return 0;
 
-=======
-/*
- * 
- */
-int main() {
-
-    Service service;
-    Processor process(service);
-    PackGestor pack;
-    
-    string dir = reQuery(service);
-    
-    //Service Init
-    service.setDirPack(dir + "app/package/");
-    service.setConfFile(dir + "app/config/carrier.json");
-
-    
-    //Pack Gestor of Process
-    pack.build(process);
-    
-    return 0;
-    
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
 }
 

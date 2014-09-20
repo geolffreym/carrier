@@ -22,13 +22,6 @@ public:
 
     void error ();
 
-<<<<<<< HEAD
-=======
-    ~Git () {
-        delete this;
-    }
-
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
 private:
 
 };

@@ -20,32 +20,14 @@ using namespace std;
 
 class Processor {
 public:
-<<<<<<< HEAD
 
-=======
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
     Processor (const Service &service) {
         this->service = service;
     };
 
-<<<<<<< HEAD
     vector<Data> dataMake (string &destinyDir);
 
 private:
-=======
-    ~Processor () {
-        delete this;
-    };
-
-
-    string getDestinyDir ();
-
-    vector<Data> dataMake ();
-
-private:
-    string destinyDir;
-    string confFile;
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
     Service service;
 
 };

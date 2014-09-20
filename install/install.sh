@@ -14,6 +14,7 @@ if VERB="$( which apt-get )" 2> /dev/null; then
     apt-get -qq -y install git
 
     echo "\nInstalling Subversion"
+    apt-get  -qq -y install apache2-dev
     apt-get  -qq -y install subversion
     apt-get  -qq -y install libapache2-svn
 
@@ -55,7 +56,7 @@ cd /src
 git clone https://github.com/geolffreym/carrier-dependencies.git
 
 echo "Going inside dependencies\n"
-cd carrier-dependencies
+cd $MAIN
 
 echo "\nProcessing Dependencies"
 echo "\n\nProcessing JSON-C Lib"
@@ -95,6 +96,7 @@ cd subversion-1.8.10
 ./configure --with-serf=/usr/local/serf/ --with-apr=/usr/local/apr/ --with-apr-util=/usr/local/apr/
 make && make install
 
+cd /src && rm -rf carrier-dependencies
 echo "\nProcess Complete. Please watch the README"
 
 

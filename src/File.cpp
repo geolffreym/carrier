@@ -11,7 +11,6 @@ using namespace std;
 
 string File::readAt(const char* dir)
 {
-<<<<<<< HEAD
     ifstream file(dir);
     string line;
     string output;
@@ -19,15 +18,6 @@ string File::readAt(const char* dir)
     while(getline(file, line))
     {
         output += (line + "\n");
-=======
-    std::ifstream file(dir);
-    std::string line;
-    std::string output;
-    
-    while(std::getline(file, line))
-    {
-        output += (std::string(line) + '\n');
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
     }
     
     return output;

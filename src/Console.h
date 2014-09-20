@@ -19,10 +19,7 @@ public:
     static void success(string log);
     static void error(string log);
     static void warning(string log);
-<<<<<<< HEAD
     static void header(string log);
-=======
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
     static void date();
     
 private:

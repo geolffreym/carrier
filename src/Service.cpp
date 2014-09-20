@@ -9,11 +9,6 @@
 
 using namespace std;
 
-<<<<<<< HEAD
-=======
-Service::Service(void){}
-
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
 string Service::getDir(string dir)
 {
 

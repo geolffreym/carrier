@@ -14,19 +14,12 @@ using namespace std;
 
 void PackGestor::gitManage (string destiny, const vector<Box> &url) {
     Git git;
-<<<<<<< HEAD
     Console::header ("Cloning Git repositories");
-=======
-    Console::warning ("\n|>-----------------********Cloning Git repositories***********-----------------<|\n");
-    Console::warning ("|>-----------------***************Please Wait*****************-----------------<|\n");
-
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
     git.clone (destiny, url);
 
 }
 
 
-<<<<<<< HEAD
 //void PackGestor::composerManage (string compose) {
 //
 //}
@@ -43,26 +36,6 @@ void PackGestor::build () {
     string destiny;
     vector<Data> data = this->process.dataMake (destiny);
 
-=======
-void PackGestor::composerManage (string compose) {
-
-}
-
-void PackGestor::svnManage (string destiny, const vector<Box> &url) {
-    SVN svn;
-    Console::warning ("\n|>-----------------********Checkout SVN repositories***********-----------------<|\n");
-    Console::warning ("|>-----------------****************Please Wait*****************-----------------<|\n");
-
-    svn.checkout (destiny, url);
-
-}
-
-void PackGestor::build (Processor &processor) {
-
-    int i = 0;
-    vector<Data> data = processor.dataMake ();
-    string destiny = processor.getDestinyDir ();
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
     enum myTypes {
         composer,
         git,
@@ -85,10 +58,7 @@ void PackGestor::build (Processor &processor) {
                 break;
         }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
 }
 
 

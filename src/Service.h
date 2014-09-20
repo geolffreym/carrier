@@ -32,7 +32,6 @@ private:
     string pack;
 
 public:
-<<<<<<< HEAD
 
     Service (void) {
     }
@@ -44,21 +43,6 @@ public:
     string getConfFile ();
 
     string getDir (string dir);
-=======
-    Service (void);
-
-    ~Service () {
-        delete this;
-    }
-
-    string getDir (string dir);
-
-    void setConfFile (string config);
-
-    string getConfFile ();
-
-    void setDirPack (string config);
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
 
     string getDirPack ();
 };

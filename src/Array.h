@@ -28,13 +28,6 @@ template<class T>
 class Array {
 public:
 
-<<<<<<< HEAD
-=======
-    ~Array () {
-        delete this;
-    };
-
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
     void addItem (string name) {
         Data d;
         d.index = name;

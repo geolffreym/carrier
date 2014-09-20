@@ -52,11 +52,7 @@ string JSON::getJSONFile (string jsonFile) {
 
 }
 
-<<<<<<< HEAD
 vector<Data> JSON::parseJSONFile (string jsonFile) {
-=======
-vector<Data> JSON::parseJSONFile (const string jsonFile) {
->>>>>>> 2256fe83497b182bc20ecb9b5602af0f9e1ef8a0
 
     string jsonString = this->getJSONFile (jsonFile);
     const char *jsonChar = jsonString.c_str ();
