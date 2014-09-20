@@ -77,11 +77,12 @@ cmake .. && cmake --build . && cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local && cma
 
 echo "\n\nProcessing Apr Lib"
 tar -xvf apr-1.5.1.tar.gz
-cd apr-1.5.1 && ./configure --prefix=/usr/local  --disable-static  --with-installbuilddir=/usr/local/share/apr-1/build && make && make install && cd $MAIN
+cd apr-1.5.1 && ./buildconf && ./configure --prefix=/usr/local  --disable-static  --with-installbuilddir=/usr/local/share/apr-1/build && make && make install && cd $MAIN
 
 echo "\n\nProcessing Apr Util Lib"
 tar -xvf apr-util-1.5.3.tar.gz
-cd apr-util-1.5.3 && ./configure --prefix=/usr/local  --with-apr=/usr/local  --with-gdbm=/usr  --with-openssl=/usr --with-crypto && make && make install && cd $MAIN
+
+cd apr-util-1.5.3 && ./buildconf --with-apr=../apr-1.5.1 && ./configure --prefix=/usr/local  --with-apr=/usr/local  --with-gdbm=/usr  --with-openssl=/usr --with-crypto && make && make install && cd $MAIN
 make install
 
 echo "\n\nProcessing Serf Lib"
@@ -94,6 +95,6 @@ cd subversion-1.8.10
 ./configure --with-serf=/usr/local/serf/ --with-apr=/usr/local/apr/ --with-apr-util=/usr/local/apr/
 make && make install
 
-echo "\nProcess Complete"
+echo "\nProcess Complete. Please watch the README"
 
 
