@@ -1,6 +1,9 @@
 Carrier
 =======
 
+After execute `./install.sh`, just go to /carrier/ `root` and compile;
+
+
 Compile
 -------
 ```js
