@@ -1,7 +1,7 @@
 Carrier
 =======
 
-After execute `./install.sh`, just go to /carrier/ `root` and compile;
+After execute `./install.sh`, just go to /carrier/ is `root` and pre-compile;
 
 
 Compile
@@ -11,4 +11,5 @@ $ mkdir build && cd build
 $ cmake ..
 $ cmake --build .
 $ cmake --build . --target install
+$ cd .. && make && make install
 ```
