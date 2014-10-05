@@ -2,6 +2,7 @@
 
 MAIN=/src/carrier-dependencies/
 INSTALL=/usr/local
+CARRIER=../
 
 echo "\nWelcome to Carrier Package Manager. Let's get fun."
 echo "Installing. Please Wait ..."
@@ -53,6 +54,14 @@ if ! [ -d "/src" ] ; then
     mkdir /src
 fi
 
+if ! [ -d "~/.carrier" ] ; then
+    mkdir ~/.carrier && cd ~/.carrier && mkdir config
+
+fi
+
+echo "Copying config.ini at ~/.carrier/config"
+cp ./config.ini ~/.carrier/config
+
 echo "\nCloning Dependencies"
 
 cd /src
@@ -99,6 +108,12 @@ cd subversion-1.8.10
 
 #--with-apr=/usr/local/apr/ --with-apr-util=/usr/local/apr/
 make && make install
+
+
+echo "Building Carrier"
+cd $CARRIER
+mkdir build && cd build && cmake .. && cmake --build . && cmake --build . --target install
+
 
 cd /src && rm -rf carrier-dependencies
 echo "\nProcess Complete. Please watch the README"
