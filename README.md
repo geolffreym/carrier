@@ -1,7 +1,7 @@
 Carrier
 =======
 
-Run `./install.sh;
+Run `./install.sh`
 
 Config
 ======
