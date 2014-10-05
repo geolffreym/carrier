@@ -5,7 +5,7 @@ INSTALL=/usr/local
 CARRIER=${PWD##*/}
 
 echo "\nWelcome to Carrier Package Manager. Let's get fun."
-echo "Installing. Please Wait ..."
+echo "Installing Dependencies. Please Wait ..."
 
 echo "\nUpdating Local Repos.."
 
@@ -54,13 +54,13 @@ if ! [ -d "/src" ] ; then
     mkdir /src
 fi
 
-if ! [ -d "~/.carrier" ] ; then
+if ! [ -d "/.carrier" ] ; then
     mkdir ~/.carrier && cd ~/.carrier && mkdir config
 
 fi
 
 echo "Copying config.ini at ~/.carrier/config"
-cp ./config.ini ~/.carrier/config
+cp -fr ./config.ini ~/.carrier/config
 
 echo "\nCloning Dependencies"
 
@@ -107,7 +107,11 @@ cd subversion-1.8.10
 ./configure --with-serf=/usr/local/serf/
 
 #--with-apr=/usr/local/apr/ --with-apr-util=/usr/local/apr/
-make && make install
+make && make install && cd $MAIN
+
+echo "\n\nProcessing LibIni"
+tar -xvf libini-1.1.10.tar.gz
+cd libini-1.1.10 && ./configure --prefix=$INSTALL && make && make install && cd $MAIN
 
 
 cd /src && rm -rf carrier-dependencies
