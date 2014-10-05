@@ -11,5 +11,4 @@ $ mkdir build && cd build
 $ cmake ..
 $ cmake --build .
 $ cmake --build . --target install
-$ cd .. && make && make install
 ```
