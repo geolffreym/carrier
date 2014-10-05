@@ -2,7 +2,7 @@
 
 MAIN=/src/carrier-dependencies/
 INSTALL=/usr/local
-#CARRIER=${PWD##*/}
+CARRIER=${PWD##*/}
 
 echo "\nWelcome to Carrier Package Manager. Let's get fun."
 echo "Installing. Please Wait ..."
