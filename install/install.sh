@@ -111,7 +111,7 @@ make && make install
 
 
 echo "Building Carrier"
-cd ..
+cd $CARRIER && cd ..
 mkdir build && cd build && cmake .. && cmake --build . && cmake --build . --target install
 
 
