@@ -2,7 +2,7 @@
 
 MAIN=/src/carrier-dependencies/
 INSTALL=/usr/local
-CARRIER=${PWD##*/}
+#CARRIER=${PWD##*/}
 
 echo "\nWelcome to Carrier Package Manager. Let's get fun."
 echo "Installing. Please Wait ..."
@@ -23,7 +23,7 @@ if VERB="$( which apt-get )" 2> /dev/null; then
 
     echo "\nInstalling Cmake and Libs dependencies"
     apt-get -qq -y install cmake
-    apt-get install tcl8.4-dev
+    apt-get -qq -y install tcl8.4-dev
     apt-get -qq -y install libjson0 libjson0-dev
     apt-get -qq -y install libbsd-dev libgoogle-glog-dev pkg-config autotools-dev python-dev automake autoconf libtool make g++
 
@@ -108,11 +108,6 @@ cd subversion-1.8.10
 
 #--with-apr=/usr/local/apr/ --with-apr-util=/usr/local/apr/
 make && make install
-
-
-echo "Building Carrier"
-cd $CARRIER && cd ..
-mkdir build && cd build && cmake .. && cmake --build . && cmake --build . --target install
 
 
 cd /src && rm -rf carrier-dependencies
