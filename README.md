@@ -1,6 +1,11 @@
 Carrier
 =======
 
-Run `./install.sh`, just;
+Run `./install.sh;
+
+Config
+======
+
+
 
 

@@ -2,7 +2,7 @@
 
 MAIN=/src/carrier-dependencies/
 INSTALL=/usr/local
-CARRIER=../
+CARRIER=${PWD##*/}
 
 echo "\nWelcome to Carrier Package Manager. Let's get fun."
 echo "Installing. Please Wait ..."
@@ -111,7 +111,7 @@ make && make install
 
 
 echo "Building Carrier"
-cd $CARRIER
+cd $CARRIER && cd ..
 mkdir build && cd build && cmake .. && cmake --build . && cmake --build . --target install
 
 
