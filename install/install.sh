@@ -1,6 +1,8 @@
 #!/bin/sh
 
 MAIN=/src/carrier-dependencies/
+INSTALL=/usr/local
+
 echo "\nWelcome to Carrier Package Manager. Let's get fun."
 echo "Installing. Please Wait ..."
 
@@ -20,6 +22,7 @@ if VERB="$( which apt-get )" 2> /dev/null; then
 
     echo "\nInstalling Cmake and Libs dependencies"
     apt-get -qq -y install cmake
+    apt-get install tcl8.4-dev
     apt-get -qq -y install libjson0 libjson0-dev
     apt-get -qq -y install libbsd-dev libgoogle-glog-dev pkg-config autotools-dev python-dev automake autoconf libtool make g++
 
@@ -62,7 +65,7 @@ echo "\nProcessing Dependencies"
 echo "\n\nProcessing JSON-C Lib"
 
 tar -xvf json-c.tar.gz
-cd json-c && ./autogen.sh && ./configure && make && make install && cd $MAIN
+cd json-c && ./autogen.sh && ./configure --prefix=$INSTALL && make && make install && cd $MAIN
 
 #tar -xvf json-c-0.12.tar.gz
 #cd json-c-0.12
@@ -78,22 +81,23 @@ cmake .. && cmake --build . && cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local && cma
 
 echo "\n\nProcessing Apr Lib"
 tar -xvf apr-1.5.1.tar.gz
-cd apr-1.5.1 && ./buildconf && ./configure --prefix=/usr/local  --disable-static  --with-installbuilddir=/usr/local/share/apr-1/build && make && make install && cd $MAIN
+cd apr-1.5.1 && ./buildconf && ./configure --prefix=$INSTALL  --disable-static  --with-installbuilddir=/usr/local/share/apr-1/build && make && make install && cd $MAIN
 
 echo "\n\nProcessing Apr Util Lib"
 tar -xvf apr-util-1.5.3.tar.gz
 
-cd apr-util-1.5.3 && ./buildconf --with-apr=../apr-1.5.1 && ./configure --prefix=/usr/local  --with-apr=/usr/local  --with-gdbm=/usr  --with-openssl=/usr --with-crypto && make && make install && cd $MAIN
-make install
+cd apr-util-1.5.3 && ./configure --prefix=$INSTALL  --with-apr=/usr/local  --with-gdbm=/usr  --with-openssl=/usr --with-crypto && make && make install && cd $MAIN
 
 echo "\n\nProcessing Serf Lib"
 tar -xvf serf-1.2.1.tar.bz2
-cd serf-1.2.1 && ./configure && make && make install && cd $MAIN
+cd serf-1.2.1 && ./configure --prefix=$INSTALL && make && make install && cd $MAIN
 
 echo "\n\nProcessing SVN Lib"
 tar -xvf subversion-1.8.10.tar.bz2
 cd subversion-1.8.10
-./configure --with-serf=/usr/local/serf/ --with-apr=/usr/local/apr/ --with-apr-util=/usr/local/apr/
+./configure --with-serf=/usr/local/serf/
+
+#--with-apr=/usr/local/apr/ --with-apr-util=/usr/local/apr/
 make && make install
 
 cd /src && rm -rf carrier-dependencies
