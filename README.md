@@ -58,7 +58,7 @@ Recharging gets an updated version of the packages
 
 Clean the packages
 
-    $ carrier -c -[pack_name optional] // Clean Package
+    $ carrier -c -p [pack_name optional] // Clean Package
     
 
 
