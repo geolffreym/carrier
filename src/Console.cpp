@@ -20,7 +20,7 @@ void Console::error (string log) {
 }
 
 void Console::warning (string log) {
-    cout << "\033[0;34m" + log + "\033[0m";
+    cout << "\033[0;33m" + log + "\033[0m";
 }
 
 void Console::header (string log) {
@@ -32,7 +32,7 @@ void Console::date () {
     Date date = Util::getTime ();
 
 
-    cout << "\033[0;34m";
+    cout << "\033[0;30m";
     cout << "\n-------------------------------\n|> ";
 
     cout << date.sday + ", "
