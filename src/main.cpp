@@ -9,14 +9,16 @@
 
 using namespace std;
 
-int main () {
+int main (int arg, char **args) {
 
-    int r;
+    File file;
+    int r, c;
     ini_fd_t fd;
+
 
     char buffer[100], *p = buffer;
     const char *keys[] = {"base_dir", "config_dir", "package_dir", "config_file_name"};
-    const char *config = "/usr/local/share/carrier/config/config.ini";
+    const char *config = "config.ini";
 
     //string dir = reQuery (service);
 
@@ -46,11 +48,32 @@ int main () {
 
     ini_close (fd);
 
+
+
     //Service Init
     Service service;
     const string main = result.at (0);
     service.setDirPack (main + result.at (2) + "/");
     service.setConfFile (main + result.at (1) + "/" + result.at (3));
+
+
+    string mainDir = service.getDirPack ();
+
+    while ( (c = getopt (arg, args, "rc")) != -1 ) {
+
+        switch ( c ) {
+            case 'r':
+                Console::warning ("\nRealoding Packages\n");
+                file.rm (mainDir);
+                break;
+            case 'c':
+                Console::warning ("\nRemoving Packages\n");
+                file.rm (mainDir);
+                return 0;
+            default:
+                break;
+        }
+    }
 
     Processor process (service);
     PackGestor pack (process);

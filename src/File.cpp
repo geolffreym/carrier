@@ -9,40 +9,41 @@
 
 using namespace std;
 
-string File::readAt(const char* dir)
-{
-    ifstream file(dir);
+string File::readAt (const char *dir) {
+    ifstream file (dir);
     string line;
     string output;
-    
-    while(getline(file, line))
-    {
+
+    while ( getline (file, line) ) {
         output += (line + "\n");
     }
-    
+
     return output;
 }
 
-bool File::isFile(string path)
-{
+bool File::isFile (string path) {
     struct stat buf;
-    stat(path.c_str(), &buf);
+    stat (path.c_str (), &buf);
     return S_ISREG(buf.st_mode);
 }
 
-bool File::isDir(string path)
-{
-    
+bool File::isDir (string path) {
+
     struct stat buf;
-    stat(path.c_str(), &buf);
+    stat (path.c_str (), &buf);
     return S_ISDIR(buf.st_mode);
 }
 
-void File::make(string dir)
-{
-    if(!this->isDir(dir))
-    {
-        mkdir(dir.c_str(), 0777);
+void File::make (string dir) {
+    if ( !this->isDir (dir) ) {
+        mkdir (dir.c_str (), 0777);
+    }
+}
+
+void File::rm (string dir) {
+    if ( this->isDir (dir) ) {
+        string ldir = "rm -rf " + dir;
+        system (ldir.c_str ());
     }
 }
 

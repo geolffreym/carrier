@@ -11,6 +11,7 @@
 #include "PackGestor.h"
 #include "Console.h"
 #include "File.h"
+#include <unistd.h>
 #include <libini.h>
 
 
@@ -18,27 +19,6 @@
 #define    MAIN_H
 
 using namespace std;
-
-string reQuery (Service service) {
-    File file;
-    string dir;
-    //string base = service.getDir ("");
-
-    //Console::warning ("|> Your home directory is: " + base);
-    Console::warning ("\n|> Write the system base directory:\n|>> ");
-    cin >> dir;
-    //dir = "/home/gmena/Documentos/_b_PHP";
-    dir = dir + "/";
-    //string BASE_DIR = GetPrivateProfileString();
-    if (!file.isDir (dir) || !file.isDir (dir + "app")) {
-        Console::error ("|> Invalid directory, please try again.\n\n");
-        reQuery (service);
-    }
-
-    return dir;
-
-
-}
 
 #endif	/* MAIN_H */
 
