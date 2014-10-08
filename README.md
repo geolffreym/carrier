@@ -29,13 +29,10 @@ Modifies the /install/config.ini file. Sets the directories and configuration fi
 Example:
 
     [DIRECTORIES]
-    BASE_DIR = '/home/mydir/app/'
-    CONFIG_DIR = 'config'
-    PACKAGE_DIR = 'packages'
-    
-    
-    [CONFIG]
-    CONFIG_FILE_NAME = 'file.json'
+    base_dir = /home/mydir/
+    config_dir = config
+    package_dir = package
+    config_file_name = carrier.json
     
 Run `./install.sh` to get dependencies and configure carrier
 
