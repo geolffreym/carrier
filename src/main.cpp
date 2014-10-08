@@ -67,7 +67,7 @@ int main (int arg, char **args) {
                 file.rm (mainDir);
                 break;
             case 'c':
-                Console::warning ("\nRemoving Packages\n");
+                Console::warning ("\nRemoving Packages");
                 file.rm (mainDir);
                 Console::warning ("\nPackages Removed\n");
                 return 0;
