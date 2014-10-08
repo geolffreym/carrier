@@ -50,15 +50,15 @@ Usage
 
 Just type carrier to begin the process of automatic management. If you want to change the information in your config.ini, you must edit the file /usr/local/share/carrier/config/config.ini
 
-    $ carrier -start
+    $ carrier -s #Start
      
 Recharging gets an updated version of the packages
     
-    $ carrier -reload -[pack_name optional]
+    $ carrier -r -p [pack_name optional] //Reload Package
 
 Clean the packages
 
-    $ carrier -clean -[pack_name optional]
+    $ carrier -c -[pack_name optional] // Clean Package
     
 
 

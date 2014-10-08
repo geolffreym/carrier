@@ -20,7 +20,7 @@ void Console::error (string log) {
 }
 
 void Console::warning (string log) {
-    cout << "\033[0;38m" + log + "\033[0m";
+    cout << "\033[0;36m" + log + "\033[0m";
 }
 
 void Console::header (string log) {
