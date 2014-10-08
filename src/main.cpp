@@ -16,7 +16,7 @@ int main () {
 
     char buffer[100], *p = buffer;
     const char *keys[] = {"base_dir", "config_dir", "package_dir", "config_file_name"};
-    const char *config = "~/.carrier/config/config.ini";
+    const char *config = "/usr/local/share/.carrier/config/config.ini";
 
     //string dir = reQuery (service);
 
