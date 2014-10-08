@@ -32,7 +32,7 @@ void Console::date () {
     Date date = Util::getTime ();
 
 
-    cout << "\033[0;30m";
+    cout << "\033[0;33m";
     cout << "\n-------------------------------\n|> ";
 
     cout << date.sday + ", "
