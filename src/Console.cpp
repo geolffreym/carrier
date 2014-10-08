@@ -24,7 +24,7 @@ void Console::warning (string log) {
 }
 
 void Console::header (string log) {
-    Console::warning ("\n|>" + log + "<|\n");
+    Console::warning ("\n|>-- " + log + " --<|\n");
 }
 
 void Console::date () {
