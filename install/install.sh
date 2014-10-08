@@ -104,7 +104,7 @@ cd serf-1.2.1 && ./configure --prefix=$INSTALL && make && make install && cd $MA
 echo "\n\nProcessing SVN Lib"
 tar -xvf subversion-1.8.10.tar.bz2
 cd subversion-1.8.10
-./configure --with-serf=/usr/local/serf/
+./configure --with-serf=/usr/local/serf/  --prefix=$INSTALL
 
 #--with-apr=/usr/local/apr/ --with-apr-util=/usr/local/apr/
 make && make install && cd $MAIN

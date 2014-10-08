@@ -11,7 +11,7 @@
 #include "PackGestor.h"
 #include "Console.h"
 #include "File.h"
-#include <ini_config.h>
+#include <libini.h>
 
 
 #ifndef MAIN_H

@@ -31,6 +31,10 @@ include_directories(apr-1.0)
 add_library(apr-1.0 STATIC IMPORTED)
 set_property(TARGET apr-1.0 PROPERTY IMPORTED_LOCATION /usr/local/lib/libapr-1.so)
 
+include_directories(ini)
+add_library(ini STATIC IMPORTED)
+set_property(TARGET ini PROPERTY IMPORTED_LOCATION /usr/local/lib/libini.a)
+
 
 
 set(SOURCE_FILES
@@ -49,6 +53,7 @@ set(SOURCE_FILES
 
 add_executable(carrier ${SOURCE_FILES})
 
+target_link_libraries(carrier ini)
 target_link_libraries(carrier apr-1.0)
 target_link_libraries(carrier subversion)
 target_link_libraries(carrier subversion-sbr)
