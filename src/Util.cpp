@@ -46,7 +46,7 @@ Date Util::getTime()
     date.day = now->tm_mday;
     date.wday = now->tm_wday;
     date.sday = days[now->tm_wday];
-    date.month = (now->tm_mon + 1);
+    date.month = (now->tm_mon);
     date.smonth = months[now->tm_mon];
     date.year = (now->tm_year + 1900);
     
