@@ -18,7 +18,7 @@ int main (int arg, char **args) {
 
     char buffer[100], *p = buffer;
     const char *keys[] = {"base_dir", "config_dir", "package_dir", "config_file_name"};
-    const char *config = "config.ini";
+    const char *config = "/usr/local/share/carrier/config/config.ini";
 
     //string dir = reQuery (service);
 
@@ -69,6 +69,7 @@ int main (int arg, char **args) {
             case 'c':
                 Console::warning ("\nRemoving Packages\n");
                 file.rm (mainDir);
+                Console::warning ("\nPackages Removed\n");
                 return 0;
             default:
                 break;
