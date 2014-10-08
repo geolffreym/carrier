@@ -1,5 +1,8 @@
 Carrier
 =======
+Review the state of the art package managers in other languages, python pip - PyPI , NPM node , java maven
+
+(Pending)
 
 Config
 ------
