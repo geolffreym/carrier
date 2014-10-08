@@ -51,7 +51,7 @@ Compile
 Usage
 ------
 
-Just type carrier to begin the process of automatic management. If you want to change the information in your config.ini, you must edit the file ~ / .carrier / config / config.ini
+Just type carrier to begin the process of automatic management. If you want to change the information in your config.ini, you must edit the file /usr/local/share/carrier/config/config.ini
 
     $ carrier -start
      
