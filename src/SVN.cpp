@@ -45,7 +45,7 @@ void SVN::checkout (string destiny, const vector<Box> &url) {
                     &peg_revision, depth,
                     true, true, ctx, pool))) {
 
-                Console::success ("\n|> Repository " + url[i].index + " created in " + (destiny + name) + "\n");
+                Console::success ("|> Repository " + url[i].index + " created in " + (destiny + name) + "\n\n");
 
             } else {
                 cout << err->message;
