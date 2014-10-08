@@ -40,15 +40,15 @@ void Git::clone (string destiny, const vector <Box> &url) {
                         if ( git_clone (&out, localURL, local, &clone_opts) != 0 ) {
                             this->error ();
                         } else {
-                            Console::success ("\n|> Repository " + name + " created in " + newDir + "\n");
+                            Console::success ("|> Repository " + name + " created in " + newDir + "\n\n");
                         }
                     }
 
                 } else {
-                    Console::error ("\n|> Invalid Repository: " + URL + "\n");
+                    Console::error ("|> Invalid Repository: " + URL + "\n\n");
                 }
             } else {
-                Console::error ("\n|> The repository " + name + " already exist\n");
+                Console::error ("|> The repository " + name + " already exist\n\n");
             }
 
         }

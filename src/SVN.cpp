@@ -51,7 +51,7 @@ void SVN::checkout (string destiny, const vector<Box> &url) {
                 cout << err->message;
             }
         } else {
-            Console::error ("\n|> The repository " + url[i].index + " already exist\n");
+            Console::error ("|> The repository " + url[i].index + " already exist\n\n");
         }
 
 
