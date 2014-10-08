@@ -54,13 +54,13 @@ if ! [ -d "/src" ] ; then
     mkdir /src
 fi
 
-if ! [ -d "/usr/local/share/.carrier" ] ; then
-    mkdir /usr/local/share/.carrier && cd /usr/local/share/.carrier && mkdir config
+if ! [ -d "/usr/local/share/carrier" ] ; then
+    mkdir /usr/local/share/carrier && cd /usr/local/share/carrier && mkdir config
 
 fi
 
 echo "Copying config.ini at /usr/local/share/.carrier"
-cp -fr ./config.ini /usr/local/share/.carrier/config
+cp -fr ./config.ini /usr/local/share/carrier/config
 
 echo "\nCloning Dependencies"
 
