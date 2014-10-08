@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void Git::clone (string destiny, const vector<Box> &url) {
+void Git::clone (string destiny, const vector <Box> &url) {
     File file;
     int i = 0;
 
@@ -23,21 +23,21 @@ void Git::clone (string destiny, const vector<Box> &url) {
 
     file.make (destiny);
 
-    if (git_threads_init () == 0) {
+    if ( git_threads_init () == 0 ) {
 
-        for (; i < url.size (); i++) {
-            string URL = url[i].value;
-            string name = url[i].index;
+        for ( ; i < url.size (); i++ ) {
+            string URL = url[ i ].value;
+            string name = url[ i ].index;
             string newDir = destiny + name;
 
-            if (!file.isDir (newDir)) {
+            if ( !file.isDir (newDir) ) {
 
                 const char *localURL = URL.c_str ();
                 const char *local = (newDir.c_str ());
 
-                if (git_remote_valid_url (localURL) > 0) {
+                if ( git_remote_valid_url (localURL) > 0 ) {
                     {
-                        if (git_clone (&out, localURL, local, &clone_opts) != 0) {
+                        if ( git_clone (&out, localURL, local, &clone_opts) != 0 ) {
                             this->error ();
                         } else {
                             Console::success ("|> Repository " + name + " created in " + newDir + "\n");
@@ -62,7 +62,7 @@ void Git::clone (string destiny, const vector<Box> &url) {
 void Git::error () {
     const git_error *err = giterr_last ();
 
-    if (err) {
+    if ( err ) {
         string message = err->message;
         Console::error ("|> ERROR: " + message + "\n");
     } else {

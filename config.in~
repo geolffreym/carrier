@@ -1,7 +1,0 @@
-;Place the directories
-
-[DIRECTORIES]
-base_dir = /home/gmena/Documentos/_b_PHP/app/
-config_dir = config
-package_dir = package
-config_file_name = carrier.json

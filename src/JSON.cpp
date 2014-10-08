@@ -6,12 +6,12 @@
  */
 
 #include "JSON.h"
+#include "Array.h"
 
 
 using namespace std;
 
 void JSON::recursiveData (json_object *jobj) {
-
     enum json_type type;
 
     json_object_object_foreach(jobj, key, val) {
@@ -30,7 +30,7 @@ void JSON::recursiveData (json_object *jobj) {
                     this->parent = key;
                     const char *newCharVal = newVal.c_str ();
 
-                    if (!this->content.inArray (key)) {
+                    if (!this->content.inArray (key) > -1) {
                         this->content.addItem (key);
                         this->recursiveData (json_tokener_parse (newCharVal));
                         this->data.push_back (this->content.getItem (this->parent));
@@ -58,6 +58,6 @@ vector<Data> JSON::parseJSONFile (string jsonFile) {
     const char *jsonChar = jsonString.c_str ();
     json_object *jobj = json_tokener_parse (jsonChar);
     this->recursiveData (jobj);
-
+    //cout << this->data[0].data[0].value;
     return this->data;
 }

@@ -6,6 +6,7 @@
  */
 #include <vector>
 #include <map>
+#include <iostream>
 
 
 #ifndef ARRAY_H
@@ -20,10 +21,10 @@ typedef struct {
 
 typedef struct {
     string index;
-    vector<Box> data;
+    vector <Box> data;
 } Data;
 
-template<class T>
+template <class T>
 
 class Array {
 public:
@@ -40,42 +41,42 @@ public:
 
     Data getItem (T index) {
         int i = 0;
-        for (; i < this->getSize (); i++) {
-            if (this->container[i].index == index) {
-                return this->container[i];
+        for ( ; i < this->getSize (); i++ ) {
+            if ( this->container[ i ].index == index ) {
+                return this->container[ i ];
             }
         }
     }
 
 
-    int inArray (T index) {
+    long inArray (T index) {
 
-        int i = 0;
-        for (; i < this->getSize (); i++) {
-            if (this->container[i].index == index) {
+        int i = 0, max = this->getSize ();
+        for ( ; i < max; i++ ) {
+            if ( this->container[ i ].index == index ) {
                 return i;
             }
         }
 
-        return 0;
+        return -1;
 
     }
 
 
     void append (T parent, T index, T value) {
-        int i;
-        if ((i = this->inArray (parent))) {
+        int i = 0;
+        if ( (i = this->inArray (parent)) > -1 ) {
             Box d;
             d.index = index;
             d.value = value;
-            this->container[i].data.push_back (d);
+            this->container[ i ].data.push_back (d);
         }
 
     }
 
 
 private:
-    vector<Data> container;
+    vector <Data> container;
 };
 
 #endif	/* ARRAYASSOC_H */
