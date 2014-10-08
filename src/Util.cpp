@@ -32,7 +32,7 @@ Date Util::getTime () {
             "July",
             "August",
             "September",
-            "Octobet",
+            "October",
             "November",
             "December"
     };

@@ -45,13 +45,13 @@ void SVN::checkout (string destiny, const vector<Box> &url) {
                     &peg_revision, depth,
                     true, true, ctx, pool))) {
 
-                Console::success ("|> Repository " + url[i].index + " created in " + (destiny + name) + "\n");
+                Console::success ("\n|> Repository " + url[i].index + " created in " + (destiny + name) + "\n");
 
             } else {
                 cout << err->message;
             }
         } else {
-            Console::error ("|> The repository " + url[i].index + " already exist\n");
+            Console::error ("\n|> The repository " + url[i].index + " already exist\n");
         }
 
 
