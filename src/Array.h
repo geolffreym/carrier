@@ -49,7 +49,7 @@ public:
     }
 
 
-    long inArray (T index) {
+    int inArray (T index) {
 
         int i = 0, max = this->getSize ();
         for ( ; i < max; i++ ) {
