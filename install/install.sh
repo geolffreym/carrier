@@ -41,6 +41,11 @@ elif VERB="$( which yum )" 2> /dev/null; then
 
     echo "\nInstalling Cmake"
     yum install cmake
+    yum install tcl8.4-dev
+    yum libjson0 libjson0-dev
+    yum install libbsd-dev libgoogle-glog-dev pkg-config autotools-dev python-dev automake autoconf libtool make g++
+
+
 
 elif VERB="$( which portage )" 2> /dev/null; then
    echo "Gentoo-based"
