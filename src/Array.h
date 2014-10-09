@@ -64,7 +64,7 @@ public:
 
 
     void append (T parent, T index, T value) {
-        int i = -1;
+        int i = 0;
         if ( (i = this->inArray (parent)) > -1 ) {
             Box d;
             d.index = index;
