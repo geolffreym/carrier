@@ -1,5 +1,6 @@
 Carrier
 =======
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/geolffreym/carrier?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Review the state of the art package managers in other languages, python pip - PyPI , NPM node , java maven
 
 (Pending)
